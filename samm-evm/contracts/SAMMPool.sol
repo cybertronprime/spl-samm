@@ -119,8 +119,8 @@ contract SAMMPool is ERC20, Ownable, ReentrancyGuard, ISAMMPool {
         lpTokens = sqrt(_amountA * _amountB);
         require(lpTokens > MINIMUM_LIQUIDITY, "SAMMPool: insufficient liquidity minted");
 
-        // Lock minimum liquidity
-        _mint(address(0), MINIMUM_LIQUIDITY);
+        // Lock minimum liquidity (burn to dead address, not address(0))
+        _mint(address(0xdead), MINIMUM_LIQUIDITY);
         _mint(msg.sender, lpTokens - MINIMUM_LIQUIDITY);
 
         // Update reserves
