@@ -1,0 +1,51 @@
+{
+  "name": "samm-evm",
+  "version": "1.0.0",
+  "description": "SAMM (Stableswap Automated Market Maker) implementation for EVM",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "test:unit": "hardhat test test/unit/**/*.test.js",
+    "test:integration": "hardhat test test/integration/**/*.test.js",
+    "test:offchain": "mocha test/offchain/**/*.test.js",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:testnet": "hardhat run scripts/deploy.js --network testnet",
+    "node": "hardhat node",
+    "clean": "hardhat clean && rm -rf cache artifacts",
+    "service:dev": "cd services && npm run dev",
+    "service:start": "cd services && npm start"
+  },
+  "keywords": [
+    "SAMM",
+    "AMM",
+    "DeFi",
+    "Solidity",
+    "EVM",
+    "Token Swap"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "@typechain/ethers-v6": "^0.5.0",
+    "@typechain/hardhat": "^9.0.0",
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^10.0.0",
+    "chai": "^4.3.0",
+    "ethers": "^6.4.0",
+    "hardhat": "^2.19.0",
+    "hardhat-gas-reporter": "^1.0.9",
+    "mocha": "^10.0.0",
+    "solidity-coverage": "^0.8.0",
+    "typechain": "^8.3.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "dotenv": "^16.0.0"
+  }
+}
